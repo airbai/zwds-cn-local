@@ -1,0 +1,8 @@
+import { Redirect } from 'expo-router';
+
+import { useStore } from '@/store';
+
+export default function Index() {
+  const profile = useStore((s) => s.profile);
+  return <Redirect href={profile ? '/(tabs)/today' : '/onboarding'} />;
+}

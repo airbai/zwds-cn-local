@@ -1,0 +1,30 @@
+1. SCREEN RECORDING
+A screen recording made on a physical iPhone running the latest iOS is attached in the Attachment field of App Review Information. It starts at app launch and shows the typical flow: onboarding (name, birth date, birth-time window, gender) → the chart, tapping a palace and asking about it → answers in the Ask tab → the Inkstar Plus paywall (the test device already holds a sandbox Monthly subscription, so it offers the upgrade to Yearly or Lifetime, Manage subscription and Restore purchases) → Me → the Today tab and "Ask about today" → Erase my data, which returns to the welcome screen.
+Inkstar has no account registration or login, so there is no account creation or deletion flow. It has no content shared between users: questions and answers are only visible on the device that asked them.
+
+2. PURPOSE AND AUDIENCE
+Inkstar draws a person's chart in Zi Wei Dou Shu ("Purple Star" astrology), a traditional Chinese star-chart system, and explains it in plain English, Korean, Japanese or Traditional Chinese.
+Audience: adults outside China mainland who are interested in Chinese astrology and East Asian culture.
+Problem it solves: traditional charts are dense, written in classical Chinese terms, and laid out for paper or desktop screens, so most people cannot read them. Inkstar computes the chart on the device, lays out the twelve palaces for a phone, explains each palace in plain language, shows where each day falls in the person's own chart, and answers questions from that chart, naming the stars and palaces each answer rests on.
+It is for self-reflection and cultural interest. It does not predict events and is not medical, legal or financial advice; the app says so on the Ask screen.
+
+3. HOW TO USE THE MAIN FEATURES
+No login, demo account or sample files are needed.
+- Launch, tap Begin, enter any name, a birth date, a birth-time window (or "I don't know my birth time") and a gender, then tap "Draw my chart".
+- Chart tab: tap any palace to read its stars and what it governs. "Ask about this palace" sends a question about it.
+- Today tab: the palace today's focus falls on, the four currents of the day, the current ten-year period and year. "Ask about today" sends a question about the day.
+- Ask tab: type any question about the chart. 3 questions a day are free.
+- Paid feature: Inkstar Plus unlocks unlimited questions. Open it from Me → See Inkstar Plus, or by asking a 4th question in a day. Products: inkstar_plus_yearly (7-day free trial), inkstar_plus_monthly, inkstar_plus_lifetime. Restore purchases is on the paywall. Everything else is free.
+- Me → Erase my data removes the birth details and conversations from the device.
+
+4. EXTERNAL SERVICES
+- Apple In-App Purchase (StoreKit) for all payments.
+- Our own server (ziwei.youxiaojia.cn, hosted on Vercel) receives the question, the computed chart facts (no name) and a random app-generated device ID. It sends the question and chart facts to a third-party large language model API (Moonshot AI, OpenAI-compatible API) to write the answer, and counts questions per device ID in a Redis key-value store to limit abuse.
+- The chart is computed on the device with the open-source iztro library (MIT license).
+No third-party login, analytics, advertising or tracking SDKs.
+
+5. REGIONAL DIFFERENCES
+The app works the same in every region where it is offered. It is not offered in China mainland. The interface follows the device language (English, Korean, Japanese, Traditional Chinese; other languages fall back to English). Prices are the local App Store prices.
+
+6. REGULATED INDUSTRY / THIRD-PARTY MATERIAL
+Inkstar is not in a regulated industry and offers no financial, medical, legal or gambling services. Zi Wei Dou Shu is a traditional system in the public domain; the calculation library iztro is MIT-licensed. All text, artwork and the icon are our own. The app contains no protected third-party material.
